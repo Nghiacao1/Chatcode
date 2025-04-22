@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trợ lý AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🧠 Anh Lập Trình - Trợ Lý AI</h1>
+    <div class="chat-box" id="chatBox">
+        <div class="message system">
+            🤖 Chào sếp! Tôi là Trình, trợ lý AI của bạn. Hãy bắt đầu trò chuyện nhé!
+          </div>
+      <% messages.forEach(m => { %>
+        <div class="message <%= m.role %>">
+          <%= m.role === 'user' ? '👤 Bạn' : '🤖' %>: <%= m.content %>
+        </div>
+      <% }) %>
+    </div>
+
+    <form action="/chat" method="POST" class="input-form">
+      <input type="text" name="message" placeholder="Sếp nhập nội dung cần trao đổi ở đây nhé?" required autocomplete="off">
+      <button type="submit">➤</button>
+    </form>
+  </div>
+</body>
+</html>

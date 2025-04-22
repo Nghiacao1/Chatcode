@@ -1,0 +1,128 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --chat-bg: #f0f0f0;
+    --user-msg-bg: #d3d3d3;
+    --assistant-msg-bg: #e0e0e0;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+      --chat-bg: #1f1f1f;
+      --user-msg-bg: #2c2c2c;
+      --assistant-msg-bg: #333;
+    }
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-color);
+  }
+  
+  .chat-box {
+    background-color: transparent; /* ← bỏ nền */
+    padding: 15px;
+    height: 60vh;
+    overflow-y: auto;
+    border-radius: 0; /* không viền */
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  
+  .message {
+    padding: 10px 15px;
+    border-radius: 8px;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
+  
+  .message.user {
+    align-self: flex-end;
+    background-color: var(--user-msg-bg);
+    color: var(--text-color);
+  }
+  
+  .message.assistant {
+    align-self: flex-start;
+    background-color: var(--assistant-msg-bg);
+    color: var(--text-color);
+  }
+  
+  .input-form {
+    display: flex;
+    background-color: var(--user-msg-bg);
+    border-radius: 30px;
+    overflow: hidden;
+  }
+  
+  .input-form input[type="text"] {
+    flex-grow: 1;
+    padding: 15px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-color);
+  }
+  
+  .input-form button {
+    padding: 0 20px;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  @media (max-width: 480px) {
+    .chat-box {
+      height: 50vh;
+    }
+  
+    .title {
+      font-size: 20px;
+    }
+  
+    .input-form input {
+      padding: 12px;
+    }
+  }
+  /* Responsive mobile */
+@media (max-width: 480px) {
+    .chat-box {
+      height: 50vh;
+    }
+  
+    .title {
+      font-size: 20px;
+    }
+  
+    .input-form input {
+      padding: 12px;
+    }
+  }
